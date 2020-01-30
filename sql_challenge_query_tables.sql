@@ -18,7 +18,8 @@ SELECT
     e.first_name,
     e.hire_date
     FROM employees AS e
-    WHERE date_part('year', hire_date) = 1986;
+    WHERE date_part('year', hire_date) = 1986
+    ORDER BY e.hire_date ASC;
 
 --https://stackoverflow.com/questions/36203613/how-to-extract-year-from-date-in-postgresql
 
@@ -47,7 +48,7 @@ SELECT
     FROM employees AS e
         INNER JOIN dept_emp AS de ON e.emp_no = de.emp_no
         INNER JOIN departments AS d ON de.dept_no = d.dept_no
-    ORDER BY e.last_name ASC;
+    ORDER BY e.last_name ASC, e.first_name ASC;
 
 --question 5: List all employees whose first name is "Hercules" and last names begin with "B."
 
